@@ -5,7 +5,7 @@ import { getUser } from "./utilities/users-service";
 import AuthPage from "./pages/AuthPage.jsx";
 import Navbar from "./components/Navbar";
 import AuthorSearch from "./pages/AuthorSearch.jsx";
-
+import BookSearch from "./pages/BookSearch.jsx";
 
 function App() {
   const [user, setUser] = useState(getUser());

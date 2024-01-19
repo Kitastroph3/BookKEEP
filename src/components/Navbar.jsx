@@ -22,7 +22,7 @@ function Navbar({user ,setUser}) {
 
         <Link to="/AuthorSearch">Author Search</Link>
 
-        <Link to="/orders/new">yubbababba</Link>
+        <Link to="/BookSearch">Book Search</Link>
       </nav>
     </>
   );
