@@ -234,3 +234,15 @@ button[type="submit"] {
   width: 80vw;
 }
 
+.bookCover {
+  height: 150px;
+}
+
+.bookGrid {
+  display: flex;
+  flex-direction: row;
+}
+
+#bookReturn {
+
+}

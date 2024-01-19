@@ -30,9 +30,16 @@ const BookSearch = () => {
         <button type="submit">Search</button>
       </form>
 
-      <div>
+      <div id="bookReturn">
         {data.map((result) => (
-          <div id="bookgrid" key={result.key}>
+          <div classname="bookGrid" key={result.key}>
+            {result.cover_i && (
+              <img
+                className="bookCover"
+                src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                alt={`Cover for ${result.title}`}
+              />
+            )}
             <div><b>{result.title}</b></div>
             <div>{result.author_name[0]}</div>
             <div>{result.first_publish_year}</div>
