@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -22,7 +19,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} 
 
 .App-link {
   color: #61dafb;
@@ -36,13 +33,14 @@
     transform: rotate(360deg);
   }
 }
+
 :root {
   --white: #FFFFFF;
   --tan-1: #f6fbfb;
   --tan-2: #dde3e7;
   --tan-3: #d1dee2;
-  --tan-4: #70745a;
-  --blue: #007Ff7;
+  --tan-4: #5a5a59;
+  --blue: #8c959e;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -66,7 +64,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 #root {
   height: 100%;
@@ -148,7 +146,7 @@ input {
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
-
+ 
 input:focus {
   border-color: var(--blue);
 }
@@ -166,7 +164,7 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
-}
+} 
 
 button.btn-sm {
   font-size: 1.5vmin;
@@ -186,12 +184,12 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */
 
 #list{
   display: grid;
   grid-template-columns: 80% 20%;
-}
+} 
 
 .modal {
   display: flex;
@@ -232,17 +230,40 @@ button[type="submit"] {
   display: flex;
   flex-direction: column;
   width: 80vw;
-}
-
-.bookCover {
-  height: 150px;
-}
+} 
 
 .bookGrid {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.609) ;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.bookCoverWrapper {
+  width: 150px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #bookReturn {
+  display: grid;
+  gap: 20px;
+}
 
+.bookDesc {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+#BookPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

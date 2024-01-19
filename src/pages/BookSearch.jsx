@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import DefaultBook from "../downloads/NoImageBook.png"
 
 const BookSearch = () => {
   const [searchBook, setSearchBook] = useState('');
@@ -9,7 +9,7 @@ const BookSearch = () => {
     e.preventDefault();
 
     const readSpaces = encodeURIComponent(searchBook)
-    fetch(`http://openlibrary.org/search.json?title=${readSpaces}`)
+    fetch(`http://openlibrary.org/search.json?title=${readSpaces}&limit=60`)
       .then((response) => response.json())
       .then((result) => {
         setData(result.docs);
@@ -19,7 +19,7 @@ const BookSearch = () => {
   };
 
   return (
-    <div >
+    <div id="BookPage">
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -32,18 +32,32 @@ const BookSearch = () => {
 
       <div id="bookReturn">
         {data.map((result) => (
-          <div classname="bookGrid" key={result.key}>
-            {result.cover_i && (
-              <img
-                className="bookCover"
-                src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
-                alt={`Cover for ${result.title}`}
-              />
-            )}
-            <div><b>{result.title}</b></div>
-            <div>{result.author_name[0]}</div>
-            <div>{result.first_publish_year}</div>
-            <div>{result.ratings_average} </div>
+          <div className="bookGrid" key={result.key}>
+            <div className='bookCoverWrapper' style={{
+              backgroundImage: `url(${result.cover_i ?
+                `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
+                : DefaultBook})`
+            }} >
+              {/* {result.cover_i ? (
+                <img
+                  className="bookCover"
+                  src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                  alt={`Cover for ${result.title}`}
+                />
+              ) : (
+                <img
+                  className='bookCover'
+                  src={DefaultBook}  
+                  alt="No Image"
+                  />
+              )} */}
+            </div>
+
+            <div className='bookDesc'>
+              <p><b>{result.title}</b></p>
+              <p>{result.author_name[0]}</p>
+              <p>{result.first_publish_year}</p>
+            </div>
           </div>
         ))}
       </div>
