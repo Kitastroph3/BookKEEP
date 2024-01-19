@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
 import AuthPage from "./pages/AuthPage.jsx";
 import Navbar from "./components/Navbar";
-import Homepage from "./pages/Homepage.jsx";
+import AuthorSearch from "./pages/AuthorSearch.jsx";
 
 
 function App() {
@@ -16,12 +16,10 @@ function App() {
       {user ? (
         <>
           <Navbar user={user} setUser={setUser} />
-          hi
-          <Homepage />
-        
-          {/* <Routes>
-            <Route path="/homepage" element={<CitySearch user={user} setUser={setUser} />} />
-          </Routes> */}
+          <Routes>
+            <Route path="/AuthorSearch" element={<AuthorSearch user={user} setUser={setUser} />} />
+            <Route path="/BookSearch" element={<BookSearch user={user} setUser={setUser} />} />
+          </Routes>
         </>
       ) : (
         <AuthPage user={user} setUser={setUser}/>

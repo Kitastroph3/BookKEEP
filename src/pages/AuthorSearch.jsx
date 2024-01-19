@@ -23,7 +23,7 @@ const AuthorDetails = ({ author, onClose }) => {
   );
 };
 
-const Homepage = () => {
+const AuthorSearch = () => {
   const [searchAuthor, setSearchAuthor] = useState('');
   const [data, setData] = useState([]);
   const [selectedAuthor, setSelectedAuthor] = useState(null);
@@ -61,7 +61,7 @@ const Homepage = () => {
   };
 
   return (
-    <div>
+    <div >
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -72,10 +72,10 @@ const Homepage = () => {
         <button type="submit">Search</button>
       </form>
 
-      <div>
+      <div className="left">
         {data.map((result) => (
           <div id="list" key={result.key}>
-            <div>Author Name: {result.name}</div>
+            <div>{result.name}</div>
             <button onClick={() => handleSelectAuthor(result.key)}>Select</button>
           </div>
         ))}
@@ -89,7 +89,7 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default AuthorSearch;
 
 // import React, { useState } from 'react';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
