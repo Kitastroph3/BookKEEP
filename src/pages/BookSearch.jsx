@@ -8,7 +8,8 @@ const BookSearch = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    fetch(`http://openlibrary.org/search.json?title=${searchBook}`)
+    const readSpaces = encodeURIComponent(searchBook)
+    fetch(`http://openlibrary.org/search.json?title=${readSpaces}`)
       .then((response) => response.json())
       .then((result) => {
         setData(result.docs);
@@ -29,13 +30,13 @@ const BookSearch = () => {
         <button type="submit">Search</button>
       </form>
 
-      <div className="left">
+      <div>
         {data.map((result) => (
-          <div id="list" key={result.key}>
-            <div>{result.title}</div>
+          <div id="bookgrid" key={result.key}>
+            <div><b>{result.title}</b></div>
             <div>{result.author_name[0]}</div>
             <div>{result.first_publish_year}</div>
-            <div>{result.ratings_average}</div>
+            <div>{result.ratings_average} </div>
           </div>
         ))}
       </div>
