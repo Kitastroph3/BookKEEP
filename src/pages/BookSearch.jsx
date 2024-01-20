@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import DefaultBook from "../downloads/NoImageBook.png"
+import { generateFave, findFave } from "../../controllers/api/faves"
 
 const BookSearch = () => {
   const [searchBook, setSearchBook] = useState('');
   const [data, setData] = useState([]);
+
+  const [fave, setFave] = useState([]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -18,6 +21,7 @@ const BookSearch = () => {
       .catch((error) => console.error(`Sorry, can't get book data`, error));
   };
 
+
   return (
     <div id="BookPage">
       <form onSubmit={handleSearch}>
@@ -31,8 +35,13 @@ const BookSearch = () => {
       </form>
 
       <div id="bookReturn">
-        {data.map((result) => (
-          <div className="bookGrid" key={result.key}>
+        {data.map((result, i) => (
+          <div className="bookGrid"
+            key={result.key}
+            onClick={() => {
+              findFave(key)
+             }}
+          >
             <div className='bookCoverWrapper' style={{
               backgroundImage: `url(${result.cover_i ?
                 `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
@@ -57,7 +66,9 @@ const BookSearch = () => {
               <p><b>{result.title}</b></p>
               <p>{result.author_name[0]}</p>
               <p>{result.first_publish_year}</p>
+
             </div>
+            <button>ADD to Fave</button>
           </div>
         ))}
       </div>
