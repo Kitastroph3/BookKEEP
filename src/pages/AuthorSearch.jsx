@@ -5,17 +5,21 @@ const AuthorDetails = ({ author, onClose }) => {
     return null;
   }
 
+  const authorPhotos = author.photos?.[0];
+  
   return (
     <div className="modal">
       <div className="authorDeets">
         <span className="close" onClick={onClose}>&times;</span>
-        <img
-          className="authorPic"
-          key={author.key}
-          alt={author.name}
-          src={`http://covers.openlibrary.org/a/id/${author.photos[0]}.jpg`}
-        />
-        <div><b>{author.personal_name}</b></div>
+        {authorPhotos && (
+          <img
+            className="authorPic"
+            key={author.key}
+            alt={author.name}
+            src={`http://covers.openlibrary.org/a/id/${authorPhotos}.jpg`}
+          />
+        )}
+        <div><b>{author.name}</b></div>
         <div><b>{author.birth_date} - {author.death_date}</b></div>
         <div>{author.bio}</div>
       </div>
@@ -44,6 +48,7 @@ const AuthorSearch = () => {
   };
 
   const handleSelectAuthor = (authorKey) => {
+
     fetch(`http://openlibrary.org/authors/${authorKey}.json`)
       .then((response) => response.json())
       .then((result) => {
