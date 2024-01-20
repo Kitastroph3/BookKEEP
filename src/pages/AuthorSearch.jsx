@@ -22,6 +22,7 @@ const AuthorDetails = ({ author, onClose }) => {
         <div><b>{author.name}</b></div>
         <div><b>{author.birth_date} - {author.death_date}</b></div>
         <div>{author.bio}</div>
+        {/* there is a bug when bio is an array[]. Need to access .value key */}
       </div>
     </div>
   );
