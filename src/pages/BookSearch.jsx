@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { generateFave, findFave } from "../../controllers/api/faves"
 import DefaultBook from "../downloads/NoImageBook.png";
+import ReadingList from "./ReadingList";
 
 
 // OKay so now I need to make sure a book is added only once (maybe, if time allows)
@@ -34,29 +35,8 @@ const BookSearch = () => {
 
   return (
     <>
-      <hr /> 
-      {/* IF FAVES Map is greater than 0, map through results OR display empty Reading List */}
-      {faves.length > 0 ? (
-        <div>
-          <div>Reading List</div>
-          {/* MAP through each item in list */}
-          {faves.map((fave, index) => (
-            <div key={index} className="faveContainer">
-              <div className="bookDesc">
-                <p>
-                  <b>{fave.title}</b>
-                </p>
-                <p>{fave.author_name[0]}</p>
-                <p>{fave.first_publish_year}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div>Reading List</div>
-      )}
 
-      <hr />
+      <ReadingList faves={faves} />
 
       <div id="BookPage">
         <form onSubmit={handleSearch}>
