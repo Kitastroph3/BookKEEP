@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-import DefaultBook from "../downloads/NoImageBook.png"
-import { generateFave, findFave } from "../../controllers/api/faves"
+import React, { useState } from "react";
+// import { generateFave, findFave } from "../../controllers/api/faves"
+import DefaultBook from "../downloads/NoImageBook.png";
+
+
+// OKay so now I need to make sure a book is added only once (maybe, if time allows)
+// --> Loop through array to see if it's added?
+// Then I want to pull out the reading list data to it's own component
+// Then I want to make sure the reading list data is saved to the database so it appears if user is logged in
+
+
 
 const BookSearch = () => {
-  const [searchBook, setSearchBook] = useState('');
+  const [searchBook, setSearchBook] = useState("");
   const [data, setData] = useState([]);
-
-  const [fave, setFave] = useState([]);
+  const [faves, setFaves] = useState([]);
 
   const handleSearch = (e) => {
     e.preventDefault();
 
-    const readSpaces = encodeURIComponent(searchBook)
+    const readSpaces = encodeURIComponent(searchBook);
     fetch(`http://openlibrary.org/search.json?title=${readSpaces}&limit=60`)
       .then((response) => response.json())
       .then((result) => {
@@ -21,33 +28,68 @@ const BookSearch = () => {
       .catch((error) => console.error(`Sorry, can't get book data`, error));
   };
 
+  const addToFaves = (result) => {
+    setFaves([...faves, result]);
+  };
 
   return (
-    <div id="BookPage">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={searchBook}
-          onChange={(e) => setSearchBook(e.target.value)}
-          placeholder="Book Title"
-        />
-        <button type="submit">Search</button>
-      </form>
+    <>
+      <hr /> 
+      {/* IF FAVES Map is greater than 0, map through results OR display empty Reading List */}
+      {faves.length > 0 ? (
+        <div>
+          <div>Reading List</div>
+          {/* MAP through each item in list */}
+          {faves.map((fave, index) => (
+            <div key={index} className="faveContainer">
+              <div className="bookDesc">
+                <p>
+                  <b>{fave.title}</b>
+                </p>
+                <p>{fave.author_name[0]}</p>
+                <p>{fave.first_publish_year}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div>Reading List</div>
+      )}
 
-      <div id="bookReturn">
-        {data.map((result, i) => (
-          <div className="bookGrid"
-            key={result.key}
-            onClick={() => {
-              findFave(key)
-             }}
-          >
-            <div className='bookCoverWrapper' style={{
-              backgroundImage: `url(${result.cover_i ?
-                `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
-                : DefaultBook})`
-            }} >
-              {/* {result.cover_i ? (
+      <hr />
+
+      <div id="BookPage">
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            value={searchBook}
+            onChange={(e) => setSearchBook(e.target.value)}
+            placeholder="Book Title"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div id="bookReturn">
+          {data.map((result, i) => (
+            <div
+              className="bookGrid"
+              key={result.key}
+              onClick={() => {
+                console.log(`Current Book : ${result}`);
+                addToFaves(result);
+              }}
+            >
+              <div
+                className="bookCoverWrapper"
+                style={{
+                  backgroundImage: `url(${
+                    result.cover_i
+                      ? `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
+                      : DefaultBook
+                  })`,
+                }}
+              >
+                {/* {result.cover_i ? (
                 <img
                   className="bookCover"
                   src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
@@ -60,20 +102,25 @@ const BookSearch = () => {
                   alt="No Image"
                   />
               )} */}
-            </div>
+              </div>
 
-            <div className='bookDesc'>
-              <p><b>{result.title}</b></p>
-              <p>{result.author_name[0]}</p>
-              <p>{result.first_publish_year}</p>
-
+              <div className="bookDesc">
+                <p>
+                  <b>{result.title}</b>
+                </p>
+                <p>{ result.author_name ? result.author_name[0]: "Author UnRegistered"}</p>
+                <p>{result.first_publish_year}</p>
+              </div>
+              <button
+                className="btnFaves"
+                onClick={() => addToFaves(result)}>
+                Save
+              </button>
             </div>
-            <button>ADD to Fave</button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-          
-    </div>
+    </>
   );
 };
 

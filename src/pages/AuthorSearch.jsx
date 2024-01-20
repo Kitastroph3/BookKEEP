@@ -32,7 +32,9 @@ const AuthorSearch = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    fetch(`http://openlibrary.org/search/authors.json?q=${searchAuthor}`)
+    const readSpaces = encodeURIComponent(searchAuthor)
+
+    fetch(`http://openlibrary.org/search/authors.json?q=${readSpaces}`)
       .then((response) => response.json())
       .then((result) => {
         setData(result.docs);
@@ -95,7 +97,7 @@ export default AuthorSearch;
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import AuthorDetails from '../components/AuthorDetails';
 
-// FOLLOWING CODE TO ROUTE DOES NOT WORK!
+// FOLLOWING CODE TO ROUTE INFO IN NEW WINDOW DOES NOT WORK!
 
 // const Homepage = () => {
 //     const [searchAuthor, setSearchAuthor] = useState('');

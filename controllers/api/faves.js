@@ -7,7 +7,4 @@ async function generateFave(req, res) {
     console.log(myfave, "created")
 }
 
-async function findFave(req, res) {
-    let myfave = await Fave.findOne({key: req.body.key})
-    console.log(myfave, "found")
-}
+https://dev.to/mccauley/accepting-data-from-a-form-and-saving-it-to-mongodb-through-mongoose-47i3

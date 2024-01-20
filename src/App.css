@@ -267,3 +267,7 @@ button[type="submit"] {
   align-items: center;
   justify-content: center;
 }
+
+.btnFaves:hover {
+  background-color: #282c34;
+}
