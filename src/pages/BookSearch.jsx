@@ -34,7 +34,7 @@ const BookSearch = () => {
   };
 
   return (
-    <>
+    <section>
 
       <ReadingList faves={faves} />
 
@@ -100,7 +100,7 @@ const BookSearch = () => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

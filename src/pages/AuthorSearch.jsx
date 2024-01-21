@@ -69,7 +69,7 @@ const AuthorSearch = () => {
   };
 
   return (
-    <div >
+    <section id="authorPage">
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -82,7 +82,7 @@ const AuthorSearch = () => {
 
       <div className="left">
         {data.map((result) => (
-          <div id="list" key={result.key}>
+          <div className="authlist" key={result.key}>
             <div>{result.name}</div>
             <button onClick={() => handleSelectAuthor(result.key)}>Select</button>
           </div>
@@ -93,7 +93,7 @@ const AuthorSearch = () => {
               <AuthorDetails author={selectedAuthor}
                   onClose={closeModal} />}
           
-    </div>
+    </section>
   );
 };
 

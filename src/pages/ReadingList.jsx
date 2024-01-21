@@ -3,8 +3,7 @@ import React from 'react'
 const ReadingList = ({faves}) => {
     return (
       <>
-      <div>ReadingList</div>
-      <hr /> 
+      <div>Reading List</div>
       {/* IF FAVES Map is greater than 0, map through results OR display empty Reading List */}
       {faves.length > 0 ? (
         <div>
