@@ -337,6 +337,53 @@ header {
   background-color: #282c34;
 }
 
+p {
+  margin: .25em;
+}
+
+.nytbookPic {
+  height: 250px;
+  width: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  justify-content: center;
+}
+
+.nytbook {
+  display: grid;
+  gap: 10px;
+  border: 3px solid white;
+}
+
+.nytbookWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  height: 280px;
+}
+
+#nytReturn {
+  display: flex;
+  gap: 30px;
+  overflow-x: scroll;
+}
+
+.nytbookDesc {
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  height: 276px;
+}
+
 @media screen and (max-width: 620px) {
   .bookDesc {
     align-items: center;
@@ -369,6 +416,3 @@ header {
   }
 }
 
-p {
-  margin: .25em;
-}

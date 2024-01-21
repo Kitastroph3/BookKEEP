@@ -19,20 +19,20 @@ const Homepage = () => {
     return (
         <section>
             <div>NYT Weekly Bestsellers</div>
-            <div>
+            <div id="nytReturn">
                 {books.map(book => (
                     <div className="nytbook" key={book.rank}>
-                        <div className='nytbookPic'
-                        //   style={{
-                        //     backgroundImage: `url(${
-                        //       book.book_image
-                        //     })`,
-                        //   }}
-                        >
-                            <img alt={book.title} src={book.book_image}  />
+                        <div className='nytbookWrapper'>
+                            <div className='nytbookPic'
+                            style={{
+                                backgroundImage: `url(${book.book_image})`,
+                            }}
+                                >
+                            </div>
+                            {/* <img alt={book.title} src={book.book_image}  /> */}
                         </div>
                         <div className='nytbookDesc'>
-                            <p>{book.rank}</p>
+                            <p>#{book.rank}</p>
                             <p>{book.title}</p>
                             <p>{book.author}</p>
                             <p>Weeks on list: {book.weeks_on_list}</p>
