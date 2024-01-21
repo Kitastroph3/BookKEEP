@@ -22,12 +22,22 @@ const Homepage = () => {
             <div>
                 {books.map(book => (
                     <div className="nytbook" key={book.rank}>
-                        
-                        <p>{book.rank}</p>
-                        <p>{book.title}</p>
-                        <p>{book.author}</p>
-                        <p>Weeks on list: {book.weeks_on_list}</p>
-                        <p>Description: {book.description}</p>
+                        <div className='nytbookPic'
+                        //   style={{
+                        //     backgroundImage: `url(${
+                        //       book.book_image
+                        //     })`,
+                        //   }}
+                        >
+                            <img alt={book.title} src={book.book_image}  />
+                        </div>
+                        <div className='nytbookDesc'>
+                            <p>{book.rank}</p>
+                            <p>{book.title}</p>
+                            <p>{book.author}</p>
+                            <p>Weeks on list: {book.weeks_on_list}</p>
+                            <p>Description: {book.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>     
