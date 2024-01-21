@@ -39,7 +39,7 @@
   --tan-1: #f6fbfb;
   --tan-2: #dde3e7;
   --tan-3: #d1dee2;
-  --tan-4: #5a5a59;
+  --tan-4: #EAE5D3;
   --blue: #8c959e;
   --text-light: #968c84;
   --text-dark: #615954;
@@ -154,29 +154,17 @@ input:focus {
 }
 
 button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
   color: var(--white);
   background-color: var(--blue);
-  font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
+  border: 2px solid white;
+  border-radius: 5px;
   outline: none;
+  padding: 8px 15px;
   cursor: pointer;
 } 
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
-}
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
@@ -185,8 +173,49 @@ button:disabled, form:invalid button[type="submit"] {
 
 button[type="submit"] {
   grid-column: span 2;
-  margin: 1vmin 0 0;
-} */
+  /* margin: 1vmin 0 0; */
+} 
+
+#navDatas {
+  display: block;
+}
+
+#navLinks {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  font-size: 14pt;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+nav {
+  background-color: cadetblue;
+  border-radius: 20px;
+  padding: 0px 30px 0px 40px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 100px;
+  padding: 10px;  
+  color: #282c34;
+
+}
+
+.navLink:hover {
+  background-color:rgb(65, 25, 73) ;
+  color: white;
+}
 
 #authorPage {
   display: flex;
