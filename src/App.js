@@ -19,7 +19,7 @@ function App() {
         <>
           <Navbar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route path="/" element={<Homepage user={user} setUser={setUser} /> } />
             <Route path="/AuthorSearch" element={<AuthorSearch user={user} setUser={setUser} />} />
             <Route path="/BookSearch" element={<BookSearch user={user} setUser={setUser} />}/>
             <Route path="/ReadingList" element={<ReadingList user={user} setUser={setUser} />} />
