@@ -10,6 +10,7 @@ function Navbar({user ,setUser}) {
     // Update state will also cause a re-render
     setUser(null);
   }
+  
   return (
     <>
       <nav style={{ justifyContent: "space-evenly", display: "flex" }}>

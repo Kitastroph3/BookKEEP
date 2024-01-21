@@ -83,7 +83,7 @@ const AuthorSearch = () => {
       <div className="left">
         {data.map((result) => (
           <div className="authlist" key={result.key}>
-            <div>{result.name}</div>
+            <div className='authorName'>{result.name}</div>
             <button onClick={() => handleSelectAuthor(result.key)}>Select</button>
           </div>
         ))}
