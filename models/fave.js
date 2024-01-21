@@ -6,8 +6,6 @@ const faveSchema = new Schema(
     {
         title: { type: String },
         author: { type: String },
-        year: { type: String },
-        image: { type: String }
     }
 );
 
