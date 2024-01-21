@@ -14,7 +14,7 @@ function Navbar({user ,setUser}) {
 
   return (
     <header>
-      <nav style={{ display: "flex", justifyContent: "space-between" }}>
+      <nav>
        
           <div id="navDatas" style={{ display: "flex",  alignItems: "center", justifyContent: "center"}} >
              <Link to="/">
