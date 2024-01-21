@@ -18,7 +18,8 @@ const Homepage = () => {
 
     return (
         <section>
-            <div>NYT Weekly Bestsellers</div>
+            <h3 style={{
+                display: "flex", alignItems: "center", justifyContent:"center"}}>NYT Weekly Bestsellers</h3>
             <div id="nytReturn">
                 {books.map(book => (
                     <div className="nytbook" key={book.rank}>

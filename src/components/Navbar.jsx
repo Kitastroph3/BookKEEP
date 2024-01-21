@@ -25,7 +25,7 @@ function Navbar({user ,setUser}) {
         </div>
       </nav>
       <div style={{
-        display: "flex", alignItems: "center", justifyContent: "right", gap: "30px", paddingRight: "38px"}}>
+        display: "flex", alignItems: "center", justifyContent: "right", gap: "20px", paddingTop: "5px"}}>
         <p>Welcome, {user.name} | {user.email}</p>
         <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
       </div>

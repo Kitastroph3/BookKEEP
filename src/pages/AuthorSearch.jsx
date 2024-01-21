@@ -70,7 +70,7 @@ const AuthorSearch = () => {
 
   return (
     <section id="authorPage">
-      <form onSubmit={handleSearch}>
+      <form className="search" onSubmit={handleSearch}>
         <input
           type="text"
           value={searchAuthor}

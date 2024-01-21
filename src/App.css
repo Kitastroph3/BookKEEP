@@ -39,7 +39,7 @@
   --tan-1: #f6fbfb;
   --tan-2: #dde3e7;
   --tan-3: #d1dee2;
-  --tan-4: #EAE5D3;
+  --tan-4: #eae5d3;
   --blue: #8c959e;
   --text-light: #968c84;
   --text-dark: #615954;
@@ -115,9 +115,20 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* background-color:  rgb(48, 50, 50); */
+  /* border: 3px solid white; */
+  /* margin: 2vw; */
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 p.error-message {
@@ -126,17 +137,24 @@ p.error-message {
 }
 
 form {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
+  max-width: 400px;
+  min-width: 300px;
   gap: 1.25vmin;
-  color: var(--text-light);
+  /* padding: 30px; */
 }
 
 label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
+  color:#282c34;
+}
+
+section{
+  padding-bottom: 60px;
 }
 
 input {
@@ -174,9 +192,32 @@ button:hover {
   background-color:#411949 ;
 }
 
+#logorsign:hover {
+  cursor: pointer;
+  color:#4f2657;
+}
+
+#loginNav {
+  height: 100px;
+}
+
+#loginNavbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#loginNavbox:hover {
+  background-color: #411949;
+  cursor: pointer;
+  color: white;
+}
+
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: #b7b093;
 }
 
 button[type="submit"] {
@@ -200,8 +241,8 @@ button[type="submit"] {
 }
 
 nav {
-  background-color: cadetblue;
-  border-radius: 20px;
+  background-color: rgb(112, 159, 161);
+  border-radius: 10px;
   padding: 0px 30px 0px 40px;
 }
 
@@ -217,7 +258,6 @@ header {
   height: 100px;
   padding: 10px;  
   color: #282c34;
-
 }
 
 .navLink:hover {
@@ -227,6 +267,10 @@ header {
 
 #logogogo {
   height: 60px;
+}
+
+.search {
+  display: flex;
 }
 
 #authorPage {
@@ -373,7 +417,10 @@ p {
   display: flex;
   gap: 30px;
   overflow-x: scroll;
+  scrollbar-width: none;
+  padding-bottom: 20px;
 }
+
 
 .nytbookDesc {
   display: grid;

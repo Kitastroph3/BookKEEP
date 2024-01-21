@@ -39,7 +39,7 @@ const BookSearch = () => {
       <ReadingList faves={faves} />
 
       <div id="BookPage">
-        <form onSubmit={handleSearch}>
+        <form className="search" onSubmit={handleSearch}>
           <input
             type="text"
             value={searchBook}
