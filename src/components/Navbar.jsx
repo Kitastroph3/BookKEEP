@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as userService from '../utilities/users-service'
+import logo from '../downloads/logo.png'
 
 function Navbar({user ,setUser}) {
 
@@ -14,8 +15,8 @@ function Navbar({user ,setUser}) {
   return (
     <header>
     <nav style={{display:"flex", justifyContent: "space-between"}}>
-        <div id="navDatas">
-          <p>LOGO</p>
+        <div id="navDatas" style={{ display: "flex",  alignItems: "center", justifyContent: "center"}} >
+          <img src={logo} alt="Bookkeep" id="logogogo"/>
         </div>
         <div id="navLinks">
           <Link to="/AuthorSearch" className="navLink">Author Search</Link>

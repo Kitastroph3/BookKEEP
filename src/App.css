@@ -140,10 +140,14 @@ label {
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
+  /* padding: 1vmin;
+  font-size: 2vmin; */
+  /* border: .1vmin solid var(--tan-3); */
+  /* border-radius: .5vmin; */
+  border: 2px solid white;
+  border-radius: 5px;
+  outline: none;
+  padding: 8px 15px;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
@@ -165,6 +169,10 @@ button, a.button {
   padding: 8px 15px;
   cursor: pointer;
 } 
+
+button:hover {
+  background-color:#411949 ;
+}
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
@@ -213,8 +221,12 @@ header {
 }
 
 .navLink:hover {
-  background-color:rgb(65, 25, 73) ;
+  background-color:#411949 ;
   color: white;
+}
+
+#logogogo {
+  height: 60px;
 }
 
 #authorPage {
@@ -355,4 +367,8 @@ header {
     grid-template-columns: auto auto;
     gap: 30px;
   }
+}
+
+p {
+  margin: .25em;
 }

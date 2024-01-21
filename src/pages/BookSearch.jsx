@@ -54,10 +54,6 @@ const BookSearch = () => {
             <div
               className="bookGrid"
               key={result.key}
-              onClick={() => {
-                console.log(`Current Book : ${result}`);
-                addToFaves(result);
-              }}
             >
               <div
                 className="bookCoverWrapper"
