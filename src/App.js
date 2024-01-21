@@ -18,14 +18,13 @@ function App() {
       {user ? (
         <>
           <Navbar user={user} setUser={setUser} />
-          
           <Routes>
+            <Route path="/" element={<Homepage />} />
             <Route path="/AuthorSearch" element={<AuthorSearch user={user} setUser={setUser} />} />
             <Route path="/BookSearch" element={<BookSearch user={user} setUser={setUser} />}/>
             <Route path="/ReadingList" element={<ReadingList user={user} setUser={setUser} />} />
           </Routes>
           
-          <Homepage />
         </>
       ) : (
         <AuthPage user={user} setUser={setUser}/>
