@@ -14,10 +14,13 @@ function Navbar({user ,setUser}) {
 
   return (
     <header>
-    <nav style={{display:"flex", justifyContent: "space-between"}}>
-        <div id="navDatas" style={{ display: "flex",  alignItems: "center", justifyContent: "center"}} >
-          <img src={logo} alt="Bookkeep" id="logogogo"/>
-        </div>
+      <nav style={{ display: "flex", justifyContent: "space-between" }}>
+       
+          <div id="navDatas" style={{ display: "flex",  alignItems: "center", justifyContent: "center"}} >
+             <Link to="/">
+                <img src={logo} alt="Bookkeep" id="logogogo"/>
+              </Link>
+          </div>
         <div id="navLinks">
           <Link to="/AuthorSearch" className="navLink">Author Search</Link>
           <Link to="/ReadingList" className="navLink">Reading List</Link>
