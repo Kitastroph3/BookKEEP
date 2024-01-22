@@ -215,6 +215,17 @@ button:hover {
   color: white;
 }
 
+/* #padding {
+  margin-top: 150px;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #eae5d3;
+} */
+
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
   background-color: #b7b093;
@@ -242,7 +253,6 @@ button[type="submit"] {
 
 nav {
   background-color: rgb(112, 159, 161);
-  border-radius: 10px;
   padding: 0px 30px 0px 40px;
   display: flex; 
   justify-content: space-between;
@@ -345,7 +355,7 @@ hr {
   justify-content: center;
   border: 1px solid black;
   margin: 25px;
-  background-color: rgba(189, 183, 107, 0.309);
+  box-shadow:  inset #a5a3a3 0px 0px 60px -12px
 }
 
 .authorPic {
@@ -357,7 +367,11 @@ hr {
 #flexRL{
   display: flex;
   gap: 20px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding: 30px;
+  margin: 40px;
+  border: 3px solid white;
+  background-color: darkkhaki;
 }
 
 .readingListItem {

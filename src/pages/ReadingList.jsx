@@ -3,7 +3,7 @@ import React from 'react'
 const ReadingList = ({faves}) => {
     return (
       <>
-        <h3 style={{textAlign:"center"}}>Reading List</h3>
+        <h3 style={{textAlign:"center", fontSize:"20pt"}}>Reading List</h3>
       {/* IF FAVES Map is greater than 0, map through results OR display empty Reading List */}
       {faves.length > 0 ? (
         <div id="flexRL">
