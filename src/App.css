@@ -429,6 +429,19 @@ p {
   padding-bottom: 20px;
 }
 
+.numero {
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  margin: auto;
+  background-color: #411949;
+  padding: .5em;
+  margin-bottom: 10px;
+}
+
+.nytStyle {
+  text-align: center;
+ }
 
 .nytbookDesc {
   display: grid;

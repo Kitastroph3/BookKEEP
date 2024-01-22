@@ -19,7 +19,7 @@ const Homepage = () => {
     return (
         <section>
             <h3 style={{
-                display: "flex", alignItems: "center", justifyContent:"center"}}>NYT Weekly Bestsellers</h3>
+                display: "flex", alignItems: "center", justifyContent:"center", fontSize: "20pt"}}>NYT Weekly Bestsellers</h3>
             <div id="nytReturn">
                 {books.map(book => (
                     <div className="nytbook" key={book.rank}>
@@ -33,11 +33,11 @@ const Homepage = () => {
                             {/* <img alt={book.title} src={book.book_image}  /> */}
                         </div>
                         <div className='nytbookDesc'>
-                            <p>#{book.rank}</p>
-                            <p>{book.title}</p>
-                            <p>{book.author}</p>
-                            <p>Weeks on list: {book.weeks_on_list}</p>
-                            <p>Description: {book.description}</p>
+                            <p className='numero'>#{book.rank}</p>
+                            <p className="nytStyle"><b>{book.title}</b></p>
+                            <p className='nytStyle'><b>{book.author}</b></p>
+                            <p className='nytStyle'>Weeks on list: {book.weeks_on_list}</p>
+                            <p className='nytStyle'>{book.description}</p>
                         </div>
                     </div>
                 ))}
