@@ -14,6 +14,7 @@ It currently remains under development as I add new features.
 For this project, I wanted to make something I would use. No matter how many times I move, I can't seem to pare down an impractically large number of much too heavy books. I started this project as a way to help me keep quickly keep track of the books I have read and want to read, and eventually, I want to add the ability to store personal notes that are linked to each book. 
 
 Check out my project planning and user stories here: 
+![link to trello](https://trello.com/b/sqyLZdBh)
 
 # Technologies Used
 
