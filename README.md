@@ -59,4 +59,4 @@ CSS cleanup, as always
 
 Add quick access to readinglist/notes on homepage (below, Trello image from project planning stage for end goal)
 
-![Trello Planning](../completedMERNtemplate/src/downloads/trelloImg.png)
+![trello img](./src/downloads/trelloImg.png)
