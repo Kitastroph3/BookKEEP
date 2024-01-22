@@ -19,10 +19,26 @@ const AuthorDetails = ({ author, onClose }) => {
             src={`http://covers.openlibrary.org/a/id/${authorPhotos}.jpg`}
           />
         )}
-        <div><b>{author.name}</b></div>
-        <div><b>{author.birth_date} - {author.death_date}</b></div>
-        <div>{author.bio}</div>
-        {/* there is a bug when bio is an array[]. Need to access .value key */}
+        <div className='modalDesc'>
+          <div className="modalName"><b>{author.name}</b></div>
+          <div className="modalDates"><b>{author.birth_date} - {author.death_date}</b></div>
+        
+        {/* there is a bug when bio is array[]. JK it was an OBJECT!*/}
+
+          {author.bio && typeof author.bio === 'object' && (
+            <div className='modalBio'>
+              {console.log(author.bio.value)}
+              {author.bio.value}
+            </div>
+          )}
+
+          {author.bio && typeof author.bio === 'string' && (
+            <div className='modalBio'>
+              {console.log(author.bio)}
+              {author.bio}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
