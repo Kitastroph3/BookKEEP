@@ -55,6 +55,8 @@ See above for my main goals!
 
 After those functions work, I plan to make the NYT homepage into a carousel (right now it has an x-scrollbar)
 
+CSS cleanup, as always
+
 Add quick access to readinglist/notes on homepage (below, Trello image from project planning stage for end goal)
 
-CSS cleanup, as always
+![Trello Planning](../completedMERNtemplate/src/downloads/trelloImg.png)
