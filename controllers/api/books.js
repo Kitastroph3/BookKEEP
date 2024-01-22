@@ -6,7 +6,8 @@ module.exports = { addBook }
 //this user wants to add a book. server says ok go to controller to handle it
 
 async function addBook(req, res) {
-        const { title, author } = req.body;
+        const { title, author, userid } = req.body;
+       
         try {
             let user = await User.findOne({email: req.body.email});
       
@@ -16,7 +17,12 @@ async function addBook(req, res) {
           }
           
             //make a new book
-            const newBook = new Book({ title, author });
+          const newBook = new Book({
+            title: title,
+            author: author,
+            user: userid,
+          });
+
             user.books.push(newBook);
             
             await user.save();

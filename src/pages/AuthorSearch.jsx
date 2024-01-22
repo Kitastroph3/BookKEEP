@@ -11,6 +11,8 @@ const AuthorDetails = ({ author, onClose }) => {
     <div className="modal">
       <div className="authorDeets">
         <span className="close" onClick={onClose}>&times;</span>
+        <div id="modalWrap">
+        <div className='authorPicWrap'>
         {authorPhotos && (
           <img
             className="authorPic"
@@ -18,7 +20,8 @@ const AuthorDetails = ({ author, onClose }) => {
             alt={author.name}
             src={`http://covers.openlibrary.org/a/id/${authorPhotos}.jpg`}
           />
-        )}
+          )}
+        </div>
         <div className='modalDesc'>
           <div className="modalName"><b>{author.name}</b></div>
           <div className="modalDates"><b>{author.birth_date} - {author.death_date}</b></div>
@@ -38,6 +41,7 @@ const AuthorDetails = ({ author, onClose }) => {
               {author.bio}
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>
