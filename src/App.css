@@ -215,11 +215,11 @@ button:hover {
   color: white;
 }
 
-/* #padding {
-  margin-top: 150px;
+#padding {
+  margin-top: 20px;
 }
 
-header{
+/* header{
   position: fixed;
   top: 0;
   width: 100%;
@@ -295,10 +295,10 @@ hr {
 }
 
 .modalBio {
-  margin: 0px 20px 20px 20px;
   padding: 10px 5px;
   max-height: 300px;
   overflow-y: auto;
+  font-family: Tahoma
 }
 
 .modal {
@@ -316,7 +316,27 @@ hr {
 
 .modalName {
   font-size: 18pt;
+  padding: 5x 0px 0px 5px;
 }
+
+#modal{
+  position: relative;
+  z-index: 2;
+}
+
+.modalDesc:before {
+    content: '';
+    border-bottom-left-radius: 150% 50%;
+    border-bottom-right-radius: 150% 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    background: rgba(189, 183, 107, 0.802);
+    height: 49%;
+  }
+
 
 .authorDeets {
   background-color: #fefefe;
@@ -342,26 +362,29 @@ hr {
   line-height: 20px;
   padding: 8px 5px;
   border-radius: 50%;
+  z-index: 3;
 }
 
 .close:hover {
   background-color: #282c3465;
   color: white;
+  cursor: pointer;
 }
 
 .authorPicWrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 25px;
-  box-shadow:  inset #a5a3a3 0px 0px 60px -12px
+  /* box-shadow:  inset #a5a3a3 0px 0px 60px -12px */
 }
 
 .authorPic {
   height: 300px;
   padding: 5px;
- 
+  box-shadow: #a5a3a3 0px 0px 60px -12px;
+  background-color: white;
 }
 
 #flexRL{

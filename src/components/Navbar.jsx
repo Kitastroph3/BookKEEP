@@ -32,7 +32,6 @@ function Navbar({user ,setUser}) {
         <p>Welcome, {user.name} | {user.email}</p>
         <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
       </div>
-    <hr/>
     </header>
   ); 
 }   

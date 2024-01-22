@@ -11,7 +11,7 @@ const AuthorDetails = ({ author, onClose }) => {
     <div className="modal">
       <div className="authorDeets">
         <span className="close" onClick={onClose}>&times;</span>
-        <div id="modalWrap">
+        <div id="modal">
         <div className='authorPicWrap'>
         {authorPhotos && (
           <img
