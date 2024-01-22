@@ -1,3 +1,5 @@
+![Bookkeep Logo](./src/downloads/logo.png)
+
 # About BOOKKEEP
 
 (The fun type of bookkeeping)
@@ -27,11 +29,21 @@ Check out my project planning and user stories here:
 HOMEPAGE
 The homepage contains a call to the NYT combined top sellers list, which is updated weekly. Book picture, title, author, description, as well as the number of weeks the book has been on the best-sellers list are displayed in a user-friendly card layout. 
 
+![NYT List](./src/downloads/NYT.png)
+
 AUTHOR SEARCH
 An author search page which details selected author information in modal format upon user interaction. The modal adjusts to different screen sizes and displays a scrollbar as needed.
 
+![Author Modal](./src/downloads/AuthorModal.png)
+
 BOOK SEARCH
 The book search allows users to search by whole or partial titles and accounts for special characters. Users can selected a book to add to their list which is displayed at the top of the screen in a familiar index card format, inspired by old school library checkout methods. The "addFave" function checks to see if a book with the same key from the api already exists on the readers list. 
+
+![Reading List](./src/downloads/Reading%20List.png)
+
+![Book Return](./src/downloads/bookReturn.png)
+
+
 
 USER DATA MANAGEMENT
 Upon account creation, user information is added to the database and verifies that the user is registering with an email that is not already in the database. Upon logon, the database is checked to ensure that password for a given email is correct. 
