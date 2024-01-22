@@ -18,6 +18,9 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
+//request from user. server gets req to add book
+app.use('/api/book', ensureLoggedIn, require('./routes/api/book')); 
+
 // ----------------------------[Routes]
 
 app.get("/*", function (req, res) {

@@ -10,7 +10,7 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main>
-      <nav id="loginNav" style={{display:"flex", justifyContent: "space-between"}}>
+      <nav id="loginNav" style={{display:"flex", justifyContent: "space-between", padding:"10px"}}>
         <div id="navDatas" style={{ display: "flex",  alignItems: "center", justifyContent: "center"}} >
           <img src={logo} alt="Bookkeep" id="logogogo"/>
         </div>

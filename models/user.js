@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const SALT_ROUNDS = 6;
 const bcrypt = require('bcrypt');
+const bookSchema = require('./book')
+
 const userSchema = new Schema(
   {
     name: { type: String, required: true },
@@ -18,6 +20,8 @@ const userSchema = new Schema(
       minLength: 3,
       required: true,
     },
+    // books: [bookSchema],
+
   },
   {
     timestamps: true,

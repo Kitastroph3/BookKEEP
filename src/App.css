@@ -249,10 +249,6 @@ nav {
   justify-content: space-between;
 }
 
-header {
-  margin-bottom: 20px;
-}
-
 .navLink {
   display: flex;
   align-items: center;
@@ -262,6 +258,10 @@ header {
   padding: 10px;  
   color: #282c34;
   text-align: center;
+}
+hr {
+  padding: 0;
+  margin: 0;
 }
 
 .navLink:hover {
@@ -282,6 +282,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .modal {
@@ -392,6 +393,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .btnFaves:hover {
@@ -423,6 +425,7 @@ p {
   display: grid;
   gap: 10px;
   border: 3px solid white;
+  background-color: #eae5d3;
 }
 
 .nytbookWrapper {
@@ -439,7 +442,9 @@ p {
   gap: 30px;
   overflow-x: scroll;
   scrollbar-width: none;
-  padding-bottom: 20px;
+  padding: 20px;
+  padding-top: 0;
+  background-color: darkkhaki;
 }
 
 .numero {
@@ -465,13 +470,15 @@ p {
   height: 276px;
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 450px) {
   .authlist {
     grid-template-columns: 200px 80px;  
 }
+
   #navLinks {
     display: block;
   }
+
   .navLink {
     height: 50px;
   }
