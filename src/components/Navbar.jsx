@@ -23,7 +23,7 @@ function Navbar({user ,setUser}) {
           </div>
         <div id="navLinks">
           <Link to="/AuthorSearch" className="navLink">Author Search</Link>
-          <Link to="/ReadingList" className="navLink">Reading List</Link>
+          <Link to="/" className="navLink">Reading List</Link>
           <Link to="/BookSearch" className="navLink">Book Search</Link>
         </div>
       </nav>

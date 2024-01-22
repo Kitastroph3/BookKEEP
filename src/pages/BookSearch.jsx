@@ -30,9 +30,14 @@ const BookSearch = () => {
   };
 
   const addToFaves = (result) => {
-    setFaves([...faves, result]);
-  };
+    const existingFave = faves.find((fave) => fave.key === result.key);
 
+    if (!existingFave) {
+      setFaves([...faves, result]);
+    } else {
+      console.log("Book already in reading list");
+    };
+  }
   return (
     <section>
 
