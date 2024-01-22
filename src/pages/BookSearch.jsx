@@ -55,16 +55,18 @@ const BookSearch = () => {
               className="bookGrid"
               key={result.key}
             >
-              <div
-                className="bookCoverWrapper"
-                style={{
-                  backgroundImage: `url(${
-                    result.cover_i
-                      ? `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
-                      : DefaultBook
-                  })`,
-                }}
-              >
+              <div className="bookWrap">
+                <div
+                  className="bookCoverWrapper"
+                  style={{
+                    backgroundImage: `url(${
+                      result.cover_i
+                        ? `https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`
+                        : DefaultBook
+                    })`,
+                  }}
+                  >
+              </div>
                 {/* {result.cover_i ? (
                 <img
                   className="bookCover"

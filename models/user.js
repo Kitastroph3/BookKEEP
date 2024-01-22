@@ -20,8 +20,6 @@ const userSchema = new Schema(
       minLength: 3,
       required: true,
     },
-    // books: [bookSchema],
-
   },
   {
     timestamps: true,

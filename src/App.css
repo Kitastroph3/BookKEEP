@@ -58,7 +58,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
-  padding: 2vmin;
   height: 100vh;
 }
 
@@ -285,6 +284,12 @@ hr {
   padding: 20px;
 }
 
+.modalBio {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+}
+
 .modal {
   display: flex;
   box-sizing: border-box;
@@ -310,7 +315,7 @@ hr {
 
 .close {
   position: absolute;
-  top: 8px;
+  top: 5px;
   right: 20px;
   font-size: 40px;
   cursor: pointer;
@@ -330,7 +335,11 @@ hr {
   background-color: white;
   margin-bottom: 10px;
   padding: 30px;
-  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.favesTitle {
+  border-bottom: 1px solid #282c34;
 }
 
 .left {
@@ -360,8 +369,8 @@ hr {
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.609) ;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.609);
+  border: 3px solid white;
   padding: 10px;
 }
 
@@ -426,6 +435,7 @@ p {
   gap: 10px;
   border: 3px solid white;
   background-color: #eae5d3;
+  box-shadow: 0 3px 8px rgba(0,0,0,.24);
 }
 
 .nytbookWrapper {
@@ -442,7 +452,7 @@ p {
   gap: 30px;
   overflow-x: scroll;
   scrollbar-width: none;
-  padding: 20px;
+  padding: 30px;
   padding-top: 0;
   background-color: darkkhaki;
 }

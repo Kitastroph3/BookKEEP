@@ -8,10 +8,10 @@ const ReadingList = ({faves}) => {
       {faves.length > 0 ? (
         <div id="flexRL">
           {/* MAP through each item in list */}
-          {faves.map((fave, index) => (
+            {faves.map((fave, index) => (
             <div key={index} className="faveContainer" style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
               <div className="bookDesc readingListItem">
-                <p>
+                <p className='favesTitle'>
                   <b>{fave.title}</b>
                 </p>
                 <p>{fave.author_name[0]}</p>
